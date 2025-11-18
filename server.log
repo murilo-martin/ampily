@@ -1,0 +1,6 @@
+No projects matched the filters "C:\xampp\htdocs\teste" in "C:\xampp\htdocs\teste"
+
+> ampliy-server@1.0.0 start C:\xampp\htdocs\teste\server
+> node index.js
+
+Ampliy server listening on port 4000

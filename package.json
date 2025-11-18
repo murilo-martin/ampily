@@ -1,0 +1,12 @@
+{
+  "name": "ampliy-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Workspace root for Ampliy project (server + client).",
+  "scripts": {
+    "dev": "pnpm --filter ampliy-client dev",
+    "dev:client": "pnpm --filter ampliy-client dev",
+    "dev:server": "pnpm --filter ampliy-server dev",
+    "start:server": "pnpm --filter ampliy-server start"
+  }
+}
