@@ -77,7 +77,11 @@ app.get("/api/content", (_req, res) => {
   res.json({ items: contentSections });
 });
 
-app.listen(PORT, () => {
-  // Log provides quick feedback about server start-up.
-  console.log(`Ampliy server listening on port ${PORT}`);
-});
+if (!process.env.VERCEL) {
+  // When running locally we need to open a port explicitly.
+  app.listen(PORT, () => {
+    console.log(`Ampliy server listening on port ${PORT}`);
+  });
+}
+
+export default app;
