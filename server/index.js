@@ -1,5 +1,5 @@
-import express from "express";
-import cors from "cors";
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -77,11 +77,11 @@ app.get("/api/content", (_req, res) => {
   res.json({ items: contentSections });
 });
 
-if (!process.env.VERCEL) {
-  // When running locally we need to open a port explicitly.
+if (require.main === module) {
+  // Start HTTP server only when running this file directly (local dev).
   app.listen(PORT, () => {
     console.log(`Ampliy server listening on port ${PORT}`);
   });
 }
 
-export default app;
+module.exports = app;

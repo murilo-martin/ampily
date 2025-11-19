@@ -6,6 +6,8 @@
       "src": "client/package.json",
       "use": "@vercel/static-build",
       "config": {
+        "installCommand": "pnpm install",
+        "buildCommand": "pnpm run build",
         "distDir": "dist"
       }
     },
@@ -13,6 +15,7 @@
       "src": "server/index.js",
       "use": "@vercel/node",
       "config": {
+        "installCommand": "pnpm install --prod",
         "excludeFiles": "client/**"
       }
     }

@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "Workspace root for Ampliy project (server + client).",
+  "packageManager": "pnpm@8.15.4",
   "scripts": {
     "dev": "pnpm --filter ampliy-client dev",
     "dev:client": "pnpm --filter ampliy-client dev",
