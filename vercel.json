@@ -6,7 +6,7 @@
       "src": "client/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "installCommand": "pnpm install",
+        "installCommand": "pnpm install --no-frozen-lockfile",
         "buildCommand": "pnpm run build",
         "distDir": "dist"
       }
@@ -15,7 +15,7 @@
       "src": "server/index.js",
       "use": "@vercel/node",
       "config": {
-        "installCommand": "pnpm install --prod",
+        "installCommand": "pnpm install --prod --no-frozen-lockfile",
         "excludeFiles": "client/**"
       }
     }
