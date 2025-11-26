@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { MouseEvent as ReactMouseEvent } from "react";
 
 type PlanOption = {
@@ -82,8 +82,20 @@ const PLAN_BENEFITS: Array<{ title: string; points: string[] }> = [
   },
 ];
 
-const CONTACT_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "5519992297835";
 const TOAST_DURATION = 4000;
+
+const openWhatsappChat = (message: string) => {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  const encodedMessage = encodeURIComponent(message);
+  window.open(
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`,
+    "_blank",
+  );
+};
 
 const PlansView = () => {
   const [selectedPlan, setSelectedPlan] = useState<PlanOption | null>(null);
@@ -134,16 +146,9 @@ const PlansView = () => {
     const confirmationMessage = `Compra do plano ${plan.label} confirmada!`;
     showToast(confirmationMessage);
 
-    const whatsappMessage = encodeURIComponent(
+    openWhatsappChat(
       `Olá! Confirmei a compra do plano ${plan.label} por ${plan.price}. Podemos seguir com os próximos passos?`,
     );
-
-    if (typeof window !== "undefined") {
-      window.open(
-        `https://wa.me/${CONTACT_NUMBER}?text=${whatsappMessage}`,
-        "_blank",
-      );
-    }
 
     closeModal();
   };
@@ -246,5 +251,3 @@ const PlansView = () => {
 };
 
 export default PlansView;
-
-

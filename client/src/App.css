@@ -42,10 +42,24 @@ body {
   justify-content: center;
   background-color: #dbe4ec;
   padding: 10px 24px;
+  gap: 10px;
   border-radius: 8px;
   font-size: 1.4rem;
   font-weight: 600;
   color: #2f3a4d;
+}
+
+.brand-badge-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid rgba(47, 58, 77, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.brand-badge-text {
+  letter-spacing: 0.2rem;
 }
 
 .sidebar-nav {
@@ -1222,12 +1236,59 @@ body {
   font-size: 0.9rem;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .workshop-form input {
   padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid #94a4b6;
   background: #fff;
   font-size: 0.95rem;
+}
+
+.workshop-password-field {
+  position: relative;
+}
+
+.workshop-password-field input {
+  width: 100%;
+  padding-right: 44px;
+}
+
+.workshop-password-toggle {
+  border: none;
+  background: transparent;
+  padding: 4px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  line-height: 0;
+}
+
+.workshop-password-toggle:hover,
+.workshop-password-toggle:focus-visible {
+  background: rgba(148, 164, 182, 0.25);
+  transform: translateY(-50%);
+}
+
+.workshop-password-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }
 
 .workshop-auth-submit {
@@ -1368,18 +1429,90 @@ body {
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
+  gap: 18px;
   padding: 40px 60px;
-  text-align: center;
+  text-align: left;
   height: 100%;
+}
+
+.hero-message {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 640px;
 }
 
 .hero h1 {
   margin: 0;
   color: #f1f4f8;
   font-size: 1.8rem;
-  max-width: 620px;
+}
+
+.hero-branding {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: rgba(10, 17, 28, 0.55);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  text-align: left;
+}
+
+.hero-logo-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background: #ffffff;
+  padding: 6px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.hero-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.hero-branding-name {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  color: #ffffff;
+}
+
+.hero-branding-tagline {
+  margin: 2px 0 0;
+  color: #cdd8e7;
+  font-size: 0.95rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #52c0ff, #70d7ff);
+  color: #0a111c;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 12px 30px rgba(10, 20, 30, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(10, 20, 30, 0.45);
 }
 
 .content-section {
@@ -1496,7 +1629,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
+  flex-wrap: wrap;
   box-shadow: 0 12px 30px rgba(10, 14, 20, 0.5);
 }
 
@@ -1504,6 +1638,12 @@ body {
   margin: 0;
   font-size: 1rem;
   max-width: 520px;
+}
+
+.footer-highlight__content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .footer-cta {
@@ -1514,11 +1654,17 @@ body {
   border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 10px 22px rgba(18, 40, 58, 0.4);
 }
 
 .footer-cta:hover {
   background-color: #607890;
+  transform: translateY(-2px);
 }
 
 .modal-backdrop {
@@ -1617,6 +1763,14 @@ body {
 
   .hero h1 {
     font-size: 1.6rem;
+  }
+
+  .hero-overlay {
+    padding: 32px 36px;
+  }
+
+  .hero-branding {
+    align-items: flex-start;
   }
 }
 
@@ -1729,6 +1883,20 @@ body {
   .footer-highlight {
     flex-direction: column;
     text-align: center;
+  }
+
+  .hero-overlay {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-branding {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-message {
+    align-items: center;
   }
 }
 

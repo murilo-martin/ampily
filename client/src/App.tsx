@@ -175,13 +175,24 @@ const App = () => {
               )}
             </section>
             <footer className="footer-highlight">
-              <p>
-                Amplify sua empresa com workshops, mentorias estratégicas e
-                comunidades exclusivas.
-              </p>
-              <button type="button" className="footer-cta">
-                Falar com um especialista
-              </button>
+              <div className="footer-highlight__content">
+                <p>
+                  Ampily sua empresa com workshops, mentorias estratégicas e
+                  comunidades exclusivas.
+                </p>
+                <p>
+                  Nossa equipe está disponível no WhatsApp para apoiar sua
+                  empresa em cada etapa.
+                </p>
+              </div>
+              <a
+                className="footer-cta"
+                href="https://wa.me/5519992297835"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Falar no WhatsApp
+              </a>
             </footer>
           </>
         )}

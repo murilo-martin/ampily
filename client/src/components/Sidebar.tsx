@@ -10,7 +10,15 @@ const Sidebar = ({ links, activeLinkId, onSelect }: SidebarProps) => {
   return (
     <aside className="sidebar">
       <div className="sidebar-brand">
-        <span className="brand-badge">Ampliy</span>
+        <span className="brand-badge" aria-label="Ampily">
+          <img
+            src="/A.png"
+            alt="Letra A estilizada da Ampily"
+            className="brand-badge-logo"
+            loading="lazy"
+          />
+          <span className="brand-badge-text">MPILY</span>
+        </span>
       </div>
       <nav className="sidebar-nav" aria-label="Seções principais">
         {links.map((link) => {

@@ -71,8 +71,8 @@ const formatDurationLabel = (seconds: number) => {
   return `${paddedMinutes}m ${paddedSeconds}s`;
 };
 
-const AUTH_EMAIL = "teste@teste.com";
-const AUTH_PASSWORD = "123";
+const AUTH_EMAIL = "projetoampily@ampily.com";
+const AUTH_PASSWORD = "ampily123";
 const REGISTERED_USER_KEY = "workshopsRegisteredUser";
 
 const WORKSHOP_LESSONS: WorkshopLesson[] = [
@@ -188,6 +188,7 @@ const WorkshopsView = ({
   const [activeTopicId, setActiveTopicId] = useState(WORKSHOP_TOPICS[0].id);
   const [loginEmail, setLoginEmail] = useState(AUTH_EMAIL);
   const [loginPassword, setLoginPassword] = useState(AUTH_PASSWORD);
+  const [showLoginPassword, setShowLoginPassword] = useState(false);
   const [toast, setToast] = useState<ToastState | null>(null);
   const [isAuthOverlayOpen, setAuthOverlayOpen] = useState(!isAuthenticated);
   const [showRegister, setShowRegister] = useState(false);
@@ -711,12 +712,35 @@ const WorkshopsView = ({
                   </label>
                   <label>
                     Senha
-                    <input
-                      type="password"
-                      value={loginPassword}
-                      onChange={(event) => setLoginPassword(event.target.value)}
-                      required
-                    />
+                    <div className="workshop-password-field">
+                      <input
+                        type={showLoginPassword ? "text" : "password"}
+                        value={loginPassword}
+                        onChange={(event) => setLoginPassword(event.target.value)}
+                        required
+                      />
+                      <button
+                        type="button"
+                        className="workshop-password-toggle"
+                        onClick={() => setShowLoginPassword((prev) => !prev)}
+                        aria-pressed={showLoginPassword}
+                        aria-label={
+                          showLoginPassword
+                            ? "Ocultar senha informada"
+                            : "Mostrar senha informada"
+                        }
+                      >
+                        <img
+                          src={showLoginPassword ? "/eye.png" : "/hidden.png"}
+                          alt=""
+                          aria-hidden="true"
+                          className="workshop-password-icon"
+                        />
+                        <span className="sr-only">
+                          {showLoginPassword ? "Ocultar senha" : "Mostrar senha"}
+                        </span>
+                      </button>
+                    </div>
                   </label>
                   <button type="submit" className="workshop-auth-submit">
                     Entrar

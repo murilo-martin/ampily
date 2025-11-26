@@ -1,0 +1,42 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 320 320"
+  role="img"
+  aria-label="Ampily"
+>
+  <defs>
+    <linearGradient id="ampily-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1b35" />
+      <stop offset="100%" stop-color="#122648" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" rx="48" fill="url(#ampily-bg)" />
+  <g fill="none" stroke="#0b1b35" stroke-width="28">
+    <path d="M160 60 258 260" opacity=".12" />
+    <path d="M160 60 62 260" opacity=".12" />
+  </g>
+  <g fill="none" stroke="#0f2345" stroke-width="6">
+    <path d="m240 120 30 30-18 6" />
+  </g>
+  <g fill="none" stroke="#0a2548" stroke-width="30" stroke-linecap="round">
+    <path d="M80 252 160 84l80 168" />
+  </g>
+  <g fill="none" stroke="#102f62" stroke-width="26" stroke-linecap="round">
+    <path d="m160 84 102 102" />
+  </g>
+  <path
+    d="m280 116 0-44 44 0z"
+    fill="#132e5e"
+  />
+  <text
+    x="50%"
+    y="289"
+    text-anchor="middle"
+    font-size="64"
+    font-family="Georgia, 'Times New Roman', serif"
+    fill="#132e5e"
+    font-weight="600"
+  >
+    AMPILY
+  </text>
+</svg>
