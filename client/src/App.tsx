@@ -187,7 +187,7 @@ const App = () => {
               </div>
               <a
                 className="footer-cta"
-                href="https://wa.me/5519992297835"
+                href="https://wa.me/5519992297835?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Ampily%20e%20gostaria%20de%20falar%20com%20um%20especialista."
                 target="_blank"
                 rel="noreferrer"
               >
